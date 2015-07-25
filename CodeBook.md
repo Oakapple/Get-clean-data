@@ -9,6 +9,32 @@ provided.  It includes:
 
 ## Codebook
 
+The following datasets are used:
+* features.txt (the types of measurements and calculation)
+* activity_labels.txt (the activity type - standing, laying etc)
+
+For both test and training datasets
+* subject_train.txt and subject_test.txt (who is doing the activity)
+* x_train.txt and x_test.txt (all the measurements and calculations)
+* y_train.txt and y_test.txt (the activity for which the measurements were taken)
+
+The datasets for train and test are composed as shown below:
+
+|activityID|subjectID|measurements from features.txt|
+|----------|---------|-------|
+|yTest|subjectTest|xTest|
+
+In addition, two variables were integrated with the data set. A descriptive factor for the activity observed during each measurement, and the subject participating in that activity.
+
+* activity
+* subject
+
+The textual label for the activity is added after the two tables are combined.
+
+|training data|
+|-------|
+|**test data**|
+
 This dataset includes the mean and standard deviation variables from the
 HAR study. These were selected by including all variables whose name in the original dataset matched one of the patterns below. 
 
@@ -92,14 +118,6 @@ in the file _features\_info.txt_ in the data set.  Quoting from that file:
 > 
 > mean(): Mean value
 > std(): Standard deviation
-
-In addition, two variables were integrated with the data set. A descriptive
-factor for the activity observed during each measurement, and the subject
-participating in
-that activity.
-
-* activity
-* subject
 
 ## Summary choices
 
