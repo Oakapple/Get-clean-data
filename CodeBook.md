@@ -10,97 +10,38 @@ provided.  It includes:
 ## Codebook
 
 This dataset includes the mean and standard deviation variables from the
-HAR study. These were selected by including all variables with "mean" or 
-"std" in their name from the original dataset, and replacing certain characters
-"(", ")", and "-" with an underscore "\_". Of the original 561 variables, the
-following 86 met the critera for inclusion:
+HAR study. These were selected by including all variables whose name in the original dataset matched one of the patterns below. 
 
-* tBodyAcc\_mean\_X
-* tBodyAcc\_mean\_Y
-* tBodyAcc\_mean\_Z
-* tBodyAcc\_std\_X
-* tBodyAcc\_std\_Y
-* tBodyAcc\_std\_Z
-* tGravityAcc\_mean\_X
-* tGravityAcc\_mean\_Y
-* tGravityAcc\_mean\_Z
-* tGravityAcc\_std\_X
-* tGravityAcc\_std\_Y
-* tGravityAcc\_std\_Z
-* tBodyAccJerk\_mean\_X
-* tBodyAccJerk\_mean\_Y
-* tBodyAccJerk\_mean\_Z
-* tBodyAccJerk\_std\_X
-* tBodyAccJerk\_std\_Y
-* tBodyAccJerk\_std\_Z
-* tBodyGyro\_mean\_X
-* tBodyGyro\_mean\_Y
-* tBodyGyro\_mean\_Z
-* tBodyGyro\_std\_X
-* tBodyGyro\_std\_Y
-* tBodyGyro\_std\_Z
-* tBodyGyroJerk\_mean\_X
-* tBodyGyroJerk\_mean\_Y
-* tBodyGyroJerk\_mean\_Z
-* tBodyGyroJerk\_std\_X
-* tBodyGyroJerk\_std\_Y
-* tBodyGyroJerk\_std\_Z
-* tBodyAccMag\_mean\_
-* tBodyAccMag\_std\_
-* tGravityAccMag\_mean\_
-* tGravityAccMag\_std\_
-* tBodyAccJerkMag\_mean\_
-* tBodyAccJerkMag\_std\_
-* tBodyGyroMag\_mean\_
-* tBodyGyroMag\_std\_
-* tBodyGyroJerkMag\_mean\_
-* tBodyGyroJerkMag\_std\_
-* fBodyAcc\_mean\_X
-* fBodyAcc\_mean\_Y
-* fBodyAcc\_mean\_Z
-* fBodyAcc\_std\_X
-* fBodyAcc\_std\_Y
-* fBodyAcc\_std\_Z
-* fBodyAcc\_meanFreq\_X
-* fBodyAcc\_meanFreq\_Y
-* fBodyAcc\_meanFreq\_Z
-* fBodyAccJerk\_mean\_X
-* fBodyAccJerk\_mean\_Y
-* fBodyAccJerk\_mean\_Z
-* fBodyAccJerk\_std\_X
-* fBodyAccJerk\_std\_Y
-* fBodyAccJerk\_std\_Z
-* fBodyAccJerk\_meanFreq\_X
-* fBodyAccJerk\_meanFreq\_Y
-* fBodyAccJerk\_meanFreq\_Z
-* fBodyGyro\_mean\_X
-* fBodyGyro\_mean\_Y
-* fBodyGyro\_mean\_Z
-* fBodyGyro\_std\_X
-* fBodyGyro\_std\_Y
-* fBodyGyro\_std\_Z
-* fBodyGyro\_meanFreq\_X
-* fBodyGyro\_meanFreq\_Y
-* fBodyGyro\_meanFreq\_Z
-* fBodyAccMag\_mean\_
-* fBodyAccMag\_std\_
-* fBodyAccMag\_meanFreq\_
-* fBodyBodyAccJerkMag\_mean\_
-* fBodyBodyAccJerkMag\_std\_
-* fBodyBodyAccJerkMag\_meanFreq\_
-* fBodyBodyGyroMag\_mean\_
-* fBodyBodyGyroMag\_std\_
-* fBodyBodyGyroMag\_meanFreq\_
-* fBodyBodyGyroJerkMag\_mean\_
-* fBodyBodyGyroJerkMag\_std\_
-* fBodyBodyGyroJerkMag\_meanFreq\_
-* angle\_tBodyAccMean\_gravity\_
-* angle\_tBodyAccJerkMean\_gravityMean\_
-* angle\_tBodyGyroMean\_gravityMean\_
-* angle\_tBodyGyroJerkMean\_gravityMean\_
-* angle\_X\_gravityMean\_
-* angle\_Y\_gravityMean\_
-* angle\_Z\_gravityMean\_
+* activity..
+* subject..
+* -mean.. and not (-meanFreq.. or mean..-)
+* -std.. and not -std()..-
+
+To expand the range of vairables to take through to the next stage, this rule can be altered.
+
+Of the original 561 variables, the following 18 met the critera for inclusion (along with activity ID and Type, and the subjectID):
+
+* activityId
+* subjectId
+* tBodyAccMag-mean()
+* tBodyAccMag-std()
+* tGravityAccMag-mean()
+* tGravityAccMag-std()
+* tBodyAccJerkMag-mean()
+* tBodyAccJerkMag-std()
+* tBodyGyroMag-mean()
+* tBodyGyroMag-std()
+* tBodyGyroJerkMag-mean()
+* tBodyGyroJerkMag-std()
+* fBodyAccMag-mean()
+* fBodyAccMag-std()
+* fBodyBodyAccJerkMag-mean()
+* fBodyBodyAccJerkMag-std()
+* fBodyBodyGyroMag-mean()
+* fBodyBodyGyroMag-std()
+* fBodyBodyGyroJerkMag-mean()
+* fBodyBodyGyroJerkMag-std()
+* activityType
 
 This is a selection of variables from the HAR data, which are described in detail
 in the file _features\_info.txt_ in the data set.  Quoting from that file:
@@ -168,13 +109,11 @@ primarily by the instructions of the assignment.  In particular:
 > 5\. Creates a second, independent tidy data set with the average of each
 >    variable for each activity and each subject.
 
-So, each of the 86 variables above from the HAR data is averaged (mean) across
+So, each of the 18 variables above from the HAR data is averaged (mean) across
 all overvations for each subject-activity pair, resulting in a total
 of 180 observations (30 subjects x 6 activities).
 
 ## Study Design
 
-This dataset merely cleans and aggregates data from the HAR project, and as
-such has no tudy design of it's own.  The study design for that project is
-available at:
+This dataset merely cleans and aggregates data from the HAR project, and as such has no tudy design of its own.  The study design for that project is available at:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
