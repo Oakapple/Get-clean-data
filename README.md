@@ -19,19 +19,20 @@ The Codebook contains:
 
 * A description of each of the variables, including units
 * Information about the summary choices
-* Information about the experimental study design
+* Link to the experimental study design that generated the initial data sets
 
 ## run_analysis.R
 
 This script assumes that the raw data from the _Human Activity Recognition
-Using Smartphones_ is downloaded and unzipped in the working directory along
-with run_analysis.R.
+Using Smartphones_ is downloaded and unzipped in the working directory. The working directory is set in the script. This was done to make the script portable between OS.
 
 The HAR project data is described at:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-The raw data to download and unzip is at:
+The raw data to download and unzip was from:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+(An archive of the data is also available from the HAR project page.
 
 ### Steps to use run_analysis.R
 
@@ -39,8 +40,8 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 1. Unzip the dataset
 1. Ensure that the unzipped directory 'UCI HAR Dataset' is in your working
    directory, along with run_analysis.R
-1. Execute run_analysis.R. It is known to work with R version 3.1.0
-   (2014-04-10), _Spring Dance_
+1. Modify the script to point to your working directory
+1. Execute run_analysis.R.
 
 ### Assignment criteria
 
@@ -55,7 +56,7 @@ the assignment):
 > 1. Creates a second, independent tidy data set with the average of each
 >    variable for each activity and each subject. 
 
-These steps are also noted in the comments in the script.
+These steps are also noted in the comments in the script along with fuller information on each step.
 
 ## Tidy data set
 
